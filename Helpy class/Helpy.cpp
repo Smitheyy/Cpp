@@ -5,7 +5,7 @@
 bool Helpy::ShouldProgramEnd() {
     char finished;
 
-    std::cout << "Do you want to terminate the program(press 't' to terminate): ";
+    std::cout << "Do you want to terminate the program?(press 't' to terminate): ";
     std::cin >> finished;
 
     if(tolower(finished) == 't')
@@ -15,4 +15,8 @@ bool Helpy::ShouldProgramEnd() {
 
 }
 
-
+void Helpy::SwapValOfInts(int *x, int *y) {
+    *x += *y;
+    *y = *x - *y;
+    *x -= *y;
+}

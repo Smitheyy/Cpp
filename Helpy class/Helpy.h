@@ -7,4 +7,5 @@
 class Helpy{
 public:
     static bool ShouldProgramEnd();
+    void SwapValOfInts(int *x, int *y);
 };
