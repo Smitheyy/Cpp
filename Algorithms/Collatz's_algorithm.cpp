@@ -1,10 +1,11 @@
 #include <iostream>
 #include "Helpy.h"
+#include <limits>
 using std::cout;
 using std::cin;
 
 
-bool KIsEven(unsigned int k) {
+bool KIsEven(unsigned int k) { //this function checks whether k is even
 
     if(k % 2 == 0){
         return true;
@@ -15,7 +16,7 @@ bool KIsEven(unsigned int k) {
 }
 
 
-unsigned int CollatzAlgorithm(unsigned int k){
+unsigned int CollatzAlgorithm(unsigned int k){ //the procedure itself
 
     cout << "\n\nAll values of k :\n";
 
@@ -46,21 +47,15 @@ int main(){
 
     do{
 
-        try{
+        while((cout << "Enter the value of k: ") && !(cin >> k)){   //user input and also a while loop which handles string and character input
 
-            cout << "Enter the value of k: ";
-            cin >> k;
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cout << "\nInvalid input! Please try again!\n";
 
         }
 
-        catch (...){
-            cout << "You have to enter a natural number for the program to work...\n";
-            cout << "The program has been terminated!\n";
-            break;
-        }
-
-
-        k = CollatzAlgorithm(k);
+        k = CollatzAlgorithm(k);    //calling the procedure
         cout << k << "\n\n";
 
         cout << "\nCollatz's algorithm takes a natural number which is k and executes said instructions:\n\n";
