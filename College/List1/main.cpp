@@ -1,4 +1,5 @@
 #include <iostream>
+#include<cmath>
 #include "L1e1.cpp"
 #include "L1e2.cpp"
 #include "L1e3and4.cpp"
@@ -11,26 +12,37 @@
 #include "L1e12.cpp"
 #include "L1e13.cpp"
 #include "L1e14.cpp"
+#include "L1e15.cpp"
+#include "L1e16.cpp"
+#include "L1e17.cpp"
 
 
 int main() {
 
-    ComplexNumber z1{}, z2{}, product{}, quotient{};
-    unsigned int decision = 0;
+    ComplexNumber z1{}, z2{}, product{}, quotient{}; //necessary for ex.13
+
+
+    unsigned int decision = 0; //variable which states what kind of program to run
+
+
+    unsigned int day1, day2, month1, month2, year1, year2; //necessary for ex.15
+
+
+    double x_values[] = {0, M_PI /4, M_PI / 2, M_PI}; //necessary for ex.17
 
 
     float tab[] = {10, 20, 30 , 500, -2.1, 75.5, 2.5, 501.72};
-    int size = sizeof(tab) / sizeof(tab[0]);
+    int size = sizeof(tab) / sizeof(tab[0]);        //these two lines are necessary for ex.10
 
 
     double array[][3] = {{9,11.11, -200},
                                  {2,0, 5.104}};
-    int rows = sizeof(array) / sizeof(array[0]);
+    int rows = sizeof(array) / sizeof(array[0]);                     // Necessary for ex.11 (this includes these 3 lines)
     int columns = sizeof(array[0]) / sizeof(array[0][0]);
 
 
     char c[] = {'a', 'b', 'c', 'd', 'l', 'd', 'e'};
-    int size_c = sizeof(c) / sizeof(c[0]);
+    int size_c = sizeof(c) / sizeof(c[0]);      //these two lines are necessary for ex.12
 
 
     std::cout << "Choose a program that you would like to run:\n";
@@ -47,7 +59,10 @@ int main() {
     std::cout << "11.Reverse elements in an array of chars\n";
     std::cout << "12.Multiply and divide two complex numbers\n";
     std::cout << "13.Determine triangle type and whether the triangle can be built\n";
-    std::cout << "Enter your choice here: ";
+    std::cout << "14.Determine which date occurred earlier\n";
+    std::cout << "15.Create a draft of ints and calculate the sum and the mean of its elements\n";
+    std::cout << "16.Calculate the sum of two series\n";
+    std::cout << "Enter your choice here: "; // all the options the user has
 
 
     std::cin >> decision;
@@ -126,6 +141,37 @@ int main() {
             DetermineTriangleType(3, 4, 5);
             break;
 
+        case 14:
+            std::cout << "Enter the first date as follows(day |space| month |space| year): ";
+            std::cin >> day1 >> month1 >> year1;
+
+            std::cout << "Enter the second date as follows(day |space| month |space| year): ";
+            std::cin >> day2 >> month2 >> year2;
+
+            if(IsDateErlier(day1, month1, year1, day2, month2, year2) == 1)
+                std::cout << "First date is prior to the second!\n";
+
+            else if(IsDateErlier(day1, month1, year1, day2, month2, year2) == 2)
+                std::cout << "Second date is prior to the first!\n";
+
+            else{
+                std::cout << "The dates are equal to one another!\n";
+            }
+            break;
+
+        case 15:
+            NNumbers();
+            break;
+
+        case 16:
+            for(double x : x_values){
+
+                std::cout << "For x = " << x << '\n';
+                std::cout << "S1 = " << CalculateS1(x) << '\n';
+                std::cout << "S2 = " << CalculateS2(x) << "\n\n";
+
+            }
+            break;
 
         default:
             std::cout << "You have to enter a positive natural number in order to submit your answer!\n";
