@@ -1,6 +1,7 @@
 #include <iostream>
 #include<cmath>
 #include<cstring>
+#include<vector>
 #include "L1e1.cpp"
 #include "L1e2.cpp"
 #include "L1e3and4.cpp"
@@ -17,7 +18,7 @@
 #include "L1e16.cpp"
 #include "L1e17.cpp"
 #include "L1e18.cpp"
-#include<vector>
+#include "L1e19.cpp"
 
 
 int main() {
@@ -51,6 +52,9 @@ int main() {
     std::vector<std::vector<int>> matrix{{5, 2}, {7, 7}, {9, 8}, {10, 2}};
     std::vector<int> vector{10, 5};
 
+    std::string ASCII_text = "This is some text. I would like to tell you that you are stronger than you think you are. You will make it. You are valuable. You are loved. You matter. Keep going.";
+    std::vector<std::string> sentences = DivideToSentences(ASCII_text);     //this is used for ex.19
+
 
     std::cout << "Capacity of matrix: " << matrix.capacity() << '\n';
     std::cout << "Choose a program that you would like to run:\n";
@@ -71,6 +75,7 @@ int main() {
     std::cout << "15.Create a draft of ints and calculate the sum and the mean of its elements\n";
     std::cout << "16.Calculate the sum of two series\n";
     std::cout << "17.Place vector into matrix\n";
+    std::cout << "18.Count sentences in ASCII text\n";
     std::cout << "Enter your choice here: "; // all the options the user has
 
 
@@ -104,7 +109,7 @@ int main() {
 
         case 4:
             for(int i = 0; i < 17; i++){
-                std::cout << "Argument: " << i << "\tZwiekszacz: " << Zwiekszacz(i) << '\n';
+                std::cout << "Argument: " << i << "\tZwiekszacz" << '(' << i << "):" << Zwiekszacz(i) << '\n';
             }
 
             break;
@@ -211,6 +216,10 @@ int main() {
                 }
                 std::cout << std::endl;
             }
+            break;
+
+        case 18:
+            DisplayResults(sentences);
             break;
 
         default:
