@@ -1,4 +1,5 @@
 #include <iostream>
+#include <tuple>
 
 
 struct Date{
@@ -11,32 +12,16 @@ struct Date{
 
 void determineanearlierdate(Date d1, Date d2){
 
-    if(d1.year < d2.year)
+    if(std::tie(d1.year, d1.month, d1.day) < std::tie(d2.year, d2.month, d2.day))
         std::cout << "First date is earlier than the second!";
 
-
-    else if(d1.year > d2.year)
+    else if(std::tie(d1.year, d1.month, d1.day) > std::tie(d2.year, d2.month, d2.day))
         std::cout << "Second date is earlier than the first!";
 
+    else if(std::tie(d1.year, d1.month, d1.day) == std::tie(d2.year, d2.month, d2.day))
+        std::cout << "The dates are the same date!";
+
     else{
-
-        if(d1.month < d2.month)
-            std::cout << "First date is earlier than the second!";
-
-        else if(d1.month > d2.month)
-            std::cout << "Second date is earlier than the first!";
-
-        else{
-
-            if(d1.day < d2.day)
-                std::cout << "First date is earlier than the second!";
-
-            else if(d1.day > d2.day)
-                std::cout << "Second date is earlier than the first!";
-
-            else{
-                std::cout << "These dates are the same date!";
-            }
-        }
+        std::cout << "Error! Your input cannot be interpreted as a date!";
     }
 }
