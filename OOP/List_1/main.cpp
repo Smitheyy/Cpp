@@ -19,20 +19,24 @@ int main() {
 
     Point3D p1{}, p2{}; // these objects are used in ex 6 (case 6)
 
-    ComplexNumber z1{}, z2{}, product{}, quotient{};   // these objects are used in ex 13 (case 13)
+    ComplexNumber z1{}, z2{}, result{};   // these objects are used in ex 13 (case 13)
 
     Date d1{}, d2{};    // these objects are used in Ex.15 (case 15)
 
     unsigned int decision = 0;
 
+
     int number;     // this variable is used in ex 4 (case 4)
     int a, b, c;    // these variables are used in ex 7 (case 7)
+
 
     float f_tab[] = {9.999, 10, 200, -2, 850.2, -7};
     int size_of_f_tab = (sizeof(f_tab) / sizeof(f_tab[0]));     // these variables are used in ex 10 (case 10)
 
+
     double d_tab[][3] = {{5.5, 700}, {900, -2, 3}, {21, 1000, -200}};
     int rows = (sizeof(d_tab) / sizeof(d_tab[0]));      // these variables are used in ex 11 (case 11)
+
 
     char string[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
     int s_size = (sizeof(string) / sizeof(string[0]));        // these variables are used in ex.12 (case 12)
@@ -189,13 +193,13 @@ int main() {
             std::cin >> z2.real >> z2.imaginary;
 
 
-            product = multiplytwocomplexnumbers(z1, z2);
-            quotient = dividetwocomplexnumbers(z1, z2);
-
-
+            result = multiplytwocomplexnumbers(z1, z2);
             std::cout << std::endl;
-            std::cout << "The product of z1 and z2 is equal to: " << product.real << " + " << product.imaginary << '\n';
-            std::cout << "The quotient of z1 and z2 is equal to: " << quotient.real << " + " << quotient.imaginary;
+            std::cout << "The product of z1 and z2 is equal to: " << result.real << " + " << result.imaginary << '\n';
+
+
+            result = dividetwocomplexnumbers(z1, z2);
+            std::cout << "The quotient of z1 and z2 is equal to: " << result.real << " + " << result.imaginary;
 
 
             break;
