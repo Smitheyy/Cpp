@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "Ex.1.cpp"
 #include "Ex.2.cpp"
 #include "Ex.3.cpp"
@@ -13,6 +14,8 @@
 #include "Ex.14.cpp"
 #include "Ex.15.cpp"
 #include "Ex.16.cpp"
+#include "Ex.17.cpp"
+#include "Ex.18.cpp"
 
 
 int main() {
@@ -43,6 +46,12 @@ int main() {
 
     double s1, s2, s3;  // these variables are used in ex.14 (case 14)
 
+    double x_val[] = {0, M_PI, M_PI / 2, M_PI / 4};    // this variable is used in ex.17 (case 17)
+
+
+    std::vector<std::vector<int>> matrix = {{2, 5}, {7, 10}, {8, 12}, {13, 16}};
+    std::vector<int> vector = {10, 5};      // these vectors are used in ex.18 (case 18)
+
 
     std::cout << "1.Witaj swiecie\n";
     std::cout << "2.Witaj swiecie 13 razy\n";
@@ -61,6 +70,8 @@ int main() {
     std::cout << "14.Determine whether the given sides can create a triangle and determine its type\n";
     std::cout << "15.Determine an earlier date\n";
     std::cout << "16.Enter n real numbers and determine their sum and mean\n";
+    std::cout << "17.Sum of two series\n";
+    std::cout << "18.Put a vector inside of a 2D vector on even spots\n";
 
     std::cout << "Enter your decision here (number from 1 to 19): ";
     std::cin >> decision;
@@ -241,6 +252,27 @@ int main() {
         case 16:
 
             nrealnumbers();
+            break;
+
+
+        case 17:
+
+
+            for(int i = 0; i < sizeof(x_val)/ sizeof(x_val[0]); i++){
+
+                std::cout << "For " << x_val[i] << std::endl;
+                std::cout << "S1: " << sumofs1(x_val[i]) << '\t' << "sin: " << sin(x_val[i]) << std::endl;
+                std::cout << "S2: " << sumofs2(x_val[i]) << '\t' << "cos: " << cos(x_val[i]) << std::endl;
+
+            }
+
+            break;
+
+
+        case 18:
+
+            addvectorintomatrix(matrix, vector);
+            displaymatrix(matrix);
             break;
 
 
