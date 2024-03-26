@@ -16,6 +16,7 @@
 #include "Ex.16.cpp"
 #include "Ex.17.cpp"
 #include "Ex.18.cpp"
+#include "Ex.19.cpp"
 
 
 int main() {
@@ -53,6 +54,10 @@ int main() {
     std::vector<int> vector = {10, 5};      // these vectors are used in ex.18 (case 18)
 
 
+    std::string text = "Boba Fett is a cold-blooded killer. Your sentence is death. You are dumb";  // these variables are used in ex. 19 (case 19)
+    std::vector<std::string> sentences = dividetexttosentences(text);
+
+
     std::cout << "1.Witaj swiecie\n";
     std::cout << "2.Witaj swiecie 13 razy\n";
     std::cout << "3.Zwiekszacz\n";
@@ -71,7 +76,8 @@ int main() {
     std::cout << "15.Determine an earlier date\n";
     std::cout << "16.Enter n real numbers and determine their sum and mean\n";
     std::cout << "17.Sum of two series\n";
-    std::cout << "18.Put a vector inside of a 2D vector on even spots\n";
+    std::cout << "18.Put a vector inside of a 2D vector on odd spots\n";
+    std::cout << "19.Count sentences in a table of ASCII characters\n";
 
     std::cout << "Enter your decision here (number from 1 to 19): ";
     std::cin >> decision;
@@ -275,6 +281,11 @@ int main() {
             displaymatrix(matrix);
             break;
 
+
+        case 19:
+
+            displayresults(sentences);
+            break;
 
         default:
 

@@ -22,9 +22,9 @@ void addvectorintomatrix(std::vector<std::vector<int>>& matrix, const std::vecto
 
 void displaymatrix(const std::vector<std::vector<int>>& matrix){
 
-    for(auto & i : matrix){
-        for(int j : i){
-            std::cout << j << '\t';
+    for(size_t i = 0; i < matrix.size(); i++) {
+        for(size_t j = 0; j < matrix[i].size(); j++) {
+            std::cout << matrix[i][j] << '\t';
         }
         std::cout << std::endl;
     }
