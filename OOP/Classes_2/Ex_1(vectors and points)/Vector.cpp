@@ -57,21 +57,21 @@ double Vector::DotProduct(Vector v) {
 	
 }
 
-Vector Vector::VectorProduct(Vector v) {
+Point Vector::VectorProduct(Vector v) {
+
 	if (points.size() != 1 || v.SizeofVector() != 1) {
 		cout << "Vectors have to have the same number of points in order to be multiplied!";
 		exit(1);
 	}
 		
 
-	Vector result;
 	Point p(0, 0, 0);
 
 	p.SetX((points[0].GetY() * v.points[0].GetZ()) - (points[0].GetZ() * v.points[0].GetY()));
 	p.SetY((points[0].GetZ() * v.points[0].GetX()) - (points[0].GetX() * v.points[0].GetZ()));
 	p.SetZ((points[0].GetX() * v.points[0].GetY()) - (points[0].GetY() * v.points[0].GetX()));
 
-	return result;
+	return p;
 }
 
 void Vector::PushOntoVector(Point p) { points.push_back(p); }

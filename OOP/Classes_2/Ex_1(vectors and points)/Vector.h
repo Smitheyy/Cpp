@@ -11,7 +11,7 @@ public:
 	Vector operator+(Vector v);
 	Vector operator-(Vector v);
 	double DotProduct(Vector v);
-	Vector VectorProduct(Vector v);
+	Point VectorProduct(Vector v);
 
 	void PushOntoVector(Point p);
 	void DownloadVector();
