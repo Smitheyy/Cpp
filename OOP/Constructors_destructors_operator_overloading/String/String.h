@@ -6,7 +6,7 @@ class String
 {
 private:
 	int size;
-	char* writing;
+	char* writing;	// class variables
 
 public:
 	~String();	// destructor
@@ -14,9 +14,9 @@ public:
 	String(const char* text);							// constructors
 	String(const String& str) : size(str.size), writing(new char[size + 1]) { strcpy_s(writing, size + 1, str.writing); }	// copy constructor
 
-	int GetSize();	
+	int GetSize();
 	String& Concatenate(String& str);	// combines two strings into a larger string	
-	void DisplayS();	
+	void DisplayS();
 	String& ReverseS();	// reverses the order of characters in a string
 
 	void operator*(int n);	// displays our string a given amount of times (ex. s1 * 5)
@@ -28,4 +28,5 @@ public:
 	friend std::ostream& operator<<(std::ostream& os, const String& str);	// displays a string using cout		// friend functions
 	friend std::istream& operator>>(std::istream& is, String& str);	// allows the user to create his string object by input
 };
+
 
