@@ -54,11 +54,12 @@ int SimpleListofPeople::counter_of_people = 0;
 
 
 int main() {
-    Person jack("Jack", "male", 22, 190), ariana("Ariana", "female", 18, 160);
+    Person jack("Jack", "male", 22, 190), ariana("Ariana", "female", 18, 160), oskar("Oskar", "male", 40, 170);
     SimpleListofPeople list;
 
     list.Add(jack);
     list.Add(ariana);
+    list.Add(oskar);
 
     std::cout << list;
 
