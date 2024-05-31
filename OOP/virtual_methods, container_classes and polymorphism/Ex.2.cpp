@@ -16,7 +16,7 @@ public:
 
     void WriteData(std::ostream& os) const {
         os << "name: " << name << ' ' << "gender: " << gender << ' '
-           << "age: " << age << ' ' << "height: " << height << '\n';
+           << "age: " << age << ' ' << "height: " << height << "cm" << '\n';
         // Check if the stream has failed
         if (!os.good()) {
             std::cerr << "Failed to write person data.\n";
