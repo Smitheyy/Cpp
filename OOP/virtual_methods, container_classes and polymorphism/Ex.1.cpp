@@ -1,18 +1,19 @@
 #include<iostream>
+#include <utility>
 
 class Human{
   private:
   std::string name;
 
   public:
-  Human(std::string _name) : name(_name) {}   // initializer list (constructor)
+  explicit Human(std::string _name) : name(std::move(_name)) {}   // initializer list (constructor)
   ~Human() = default;  // default destructor
 
   void WriteData(std::ostream& os){   // displays your human's name
     os << "A person's name is: " << name << '\n';
   }
 
-  void WriteClass(std::ostream& os){  // informs a user that his human is of an human type
+  void WriteClass(std::ostream& os){  // informs a user that his human is of a human type
     os << "Your object is of an Human class!\n";
   }
 
@@ -26,7 +27,7 @@ class Human{
 
   }
 
-  friend std::ostream& operator<<(std::ostream& os, const Human& human);  // operator "<<" overloading - a mix of two previous functions
+  friend std::ostream& operator<<(std::ostream& os, Human& human);  // operator "<<" overloading - a mix of two previous functions
 };
 
 std::ostream& operator<<(std::ostream& os, Human& human){
@@ -59,5 +60,6 @@ int main(){
   std::cout << *ptrtoperson;  // doing the same but with "<<" operator
 
 
+  delete ptrtoperson;
   return 0;
 }
