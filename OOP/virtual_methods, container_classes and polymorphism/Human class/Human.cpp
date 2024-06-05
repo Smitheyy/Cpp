@@ -3,7 +3,7 @@
 using namespace std;
 
 
-Human::Human(string _name) { name = _name; }	// definition of constructor
+Human::Human(string _name) : name(_name){}	// definition of constructor
 
 // member function definitions
 void Human::displayData(ostream& os) { os << "Name of human: " << name << '\n'; }
@@ -16,8 +16,6 @@ Human* Human::createNew() {		// static member function
 	return (new Human(new_name));
 }
 	
-	
-
 ostream& operator<<(ostream& os, Human& h){
 	h.displayData(os);
 	h.displayClass(os);
