@@ -1,10 +1,6 @@
 #pragma once
 #include<iostream>
 
-#pragma once
-#include<iostream>
-
-
 class Human
 {
 private:
