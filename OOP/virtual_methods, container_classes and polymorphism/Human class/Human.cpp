@@ -6,8 +6,9 @@ using namespace std;
 Human::Human(string _name) : name(_name){}	// definition of constructor
 
 // member function definitions
+std::string Human::getName() { return name; }
 void Human::displayData(ostream& os) { os << "Name of human: " << name << '\n'; }
-void Human::displayClass(ostream& os) { os << "Your object is of an Human type" << '\n'; }
+void Human::displayClass(ostream& os) { os << "Your object is of an Human type\n"; }
 Human* Human::createNew() {		// static member function
 	string new_name;
 	cout << "name: ";
@@ -15,7 +16,8 @@ Human* Human::createNew() {		// static member function
 
 	return (new Human(new_name));
 }
-	
+
+// friend of Human
 ostream& operator<<(ostream& os, Human& h){
 	h.displayData(os);
 	h.displayClass(os);
