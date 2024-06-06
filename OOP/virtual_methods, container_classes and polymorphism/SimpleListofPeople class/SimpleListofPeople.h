@@ -5,7 +5,7 @@
 
 class SimpleListofPeople
 {
-private:
+private:	
 	Human people[2];	// two personas
 	int number_of_people;
 
