@@ -4,7 +4,9 @@
 using namespace std;
 
 
-SimpleListofPeople2::SimpleListofPeople2(int number_of_people_c) : number_of_people(number_of_people_c), counter_of_people(0) {}
+SimpleListofPeople2::SimpleListofPeople2(int number_of_people_c) : number_of_people(number_of_people_c), counter_of_people(0) {} // constructor
+
+// member function
 void SimpleListofPeople2::add(Human& h) {
 	if (counter_of_people == number_of_people) {
 		cout << "The list is full! You can't add " << h.getName() << " into it!\n";
@@ -18,6 +20,7 @@ void SimpleListofPeople2::add(Human& h) {
 	}
 }
 
+// friend of SimpleListofPeople2
 ostream& operator<<(ostream& os, SimpleListofPeople2& slp) {
 	os << "Here are the people on the list:\n";
 	for (int i = 0; i < slp.people.size(); i++) {
