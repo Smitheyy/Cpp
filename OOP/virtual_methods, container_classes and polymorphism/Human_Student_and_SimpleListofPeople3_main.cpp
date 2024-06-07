@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Human.h"
+#include "Student.h"
 #include "SimpleListofPeople3.h"
 using namespace std;
 
