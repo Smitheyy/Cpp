@@ -27,6 +27,7 @@ int main()
 
     cout << list;
 
+    delete check;
 
     return 0;
 }
