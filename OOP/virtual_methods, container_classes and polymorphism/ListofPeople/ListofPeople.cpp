@@ -4,10 +4,11 @@
 using namespace std;
 
 
-ListofPeople::ListofPeople(int number_of_people_c) : number_of_people(number_of_people_c), counter_of_people(0), counter_of_students(0), position(0){} // constructor
+ListofPeople::ListofPeople(int number_of_people_c) : number_of_people(number_of_people_c), counter_of_people(0), position(0){} // constructor
 
 // member functions
 void ListofPeople::add(Person* p) {
+	static int number_of_students = 0;
 
 	int position_of_student = 0;
 
@@ -26,7 +27,7 @@ void ListofPeople::add(Person* p) {
 		}
 		
 		else if(position == number_of_people - 1 && p->isStudent()) {
-			if (counter_of_students == 1) {
+			if (number_of_students == 1) {
 				std::cout << "You can't add any more students into the list because you can have only one of them and " << p->getName() << " is a student\n";
 				return;
 			}
@@ -52,8 +53,9 @@ void ListofPeople::add(Person* p) {
 
 				cout << p->getName() << " has been added into the list!\n";
 				counter_of_people++;
-				counter_of_students++;
+				number_of_students++;
 				position++;
+				
 			}
 		}
 	
