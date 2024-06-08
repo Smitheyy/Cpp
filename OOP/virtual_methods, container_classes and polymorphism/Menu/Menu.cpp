@@ -1,7 +1,8 @@
 #include "OptionMenu.h"
 #include "HumanOption.h"
 #include "StudentOption.h"
-#include "DisplayList.h"
+#include "DisplayListOption.h"
+#include "ListofPeople2.h"
 #include "Menu.h"
 #include <iostream>
 using namespace std;
@@ -64,7 +65,7 @@ void Menu::swapOptions() {
 
 }
 
-void Menu::chooseOption(ListofPeople& list) {
+void Menu::chooseOption(ListofPeople2& list) {
 	int choice;
 	cout << "Pick an option\n";
 

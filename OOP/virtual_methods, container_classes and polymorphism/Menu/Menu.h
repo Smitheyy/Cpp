@@ -1,6 +1,6 @@
 #pragma once
 #include "OptionMenu.h"
-#include "ListofPeople.h"
+#include "ListofPeople2.h"
 
 
 class Menu
@@ -15,7 +15,7 @@ public:
 	~Menu();
 
 	Menu& operator=(const Menu& menu);
-	void chooseOption(ListofPeople& list);
+	void chooseOption(ListofPeople2& list);
 	void swapOptions();
 
 };
