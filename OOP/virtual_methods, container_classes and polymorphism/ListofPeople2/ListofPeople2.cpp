@@ -8,6 +8,7 @@ ListofPeople2::ListofPeople2(int number_of_people_c) : number_of_people(number_o
 
 // member functions
 void ListofPeople2::add(Person* p) {
+	static int counter_of_students = 0;
 	if (counter_of_people == number_of_people) {
 		cout << "The list is full! You can't add " << p->getName() << " into it!\n";
 		return;
