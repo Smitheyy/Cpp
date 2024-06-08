@@ -5,7 +5,7 @@
 using namespace std;
 
 
-SimpleListofPeople3::SimpleListofPeople3(int number_of_people_c) : number_of_people(number_of_people_c), counter_of_people(0), student_index_num(0), position_of_student(0) {} // constructor
+SimpleListofPeople3::SimpleListofPeople3(int number_of_people_c) : number_of_people(number_of_people_c), counter_of_people(0), student_index_num(0), position_of_student(0), position(0) {} // constructor
 
 // member functions
 void SimpleListofPeople3::add(Human& h) {
@@ -18,24 +18,25 @@ void SimpleListofPeople3::add(Human& h) {
 		people.push_back(h);
 		cout << h.getName() << " has been added into the list\n";
 		counter_of_people++;
+		position++;
 	}
 }
 
 void SimpleListofPeople3::add(Student& s){
 	static int calls = 0;
 	
-	if (calls == number_of_students) {
+	if (calls == 1) {
 		cout << "You can't add more than one student into your list!\n";
 		return;
 	}
 
-	else {
+	else if(position == number_of_people - 1) {
 		do {
-			if (position_of_student > number_of_people || position_of_student <= 0) 
-				cout << "\nThe student's position has exceeded the scope of your list! Please try again\n";
-
 			cout << "Enter the position to which you would like to assign your student: ";
 			cin >> position_of_student;
+
+			if (position_of_student > number_of_people || position_of_student <= 0)
+				cout << "\nThe student's position has exceeded the scope of your list! Please try again\n";
 		} while (position_of_student > number_of_people || position_of_student <= 0);
 
 		student_index_num = s.getIndexNumber();
@@ -45,9 +46,15 @@ void SimpleListofPeople3::add(Student& s){
 
 		else
 			people.insert(people.begin() + position_of_student - 1, (Human&)s);
-
+		
 		cout << s.getName() << " has been added into the list!\n";
 		calls++;
+		position++;
+	}
+
+	else {
+		cout << "You can't add a student right now you can do so only when it will be the last person you add in the list, then you will be able to have it anywhere you want\n";
+		return;
 	}
 }
 
