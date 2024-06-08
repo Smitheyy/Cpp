@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-	ListofPeople list(4);
+	ListofPeople2 list(4);
 
 	Menu menu;
 	char exit_loop = 'q';
