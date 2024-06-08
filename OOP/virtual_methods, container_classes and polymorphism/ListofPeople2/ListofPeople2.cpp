@@ -4,7 +4,7 @@
 using namespace std;
 
 
-ListofPeople2::ListofPeople2(int number_of_people_c) : number_of_people(number_of_people_c), counter_of_people(0), counter_of_students(0) {} // constructor
+ListofPeople2::ListofPeople2(int number_of_people_c) : number_of_people(number_of_people_c), counter_of_people(0) {} // constructor
 
 // member functions
 void ListofPeople2::add(Person* p) {
